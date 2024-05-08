@@ -268,6 +268,7 @@
             function addData() {
                 setFirebase("point1", 60 , 30, 350);
             }
+           
             var k = 0;
             function getData() {
                 getFirebaseValue("point1");
@@ -277,8 +278,10 @@
                     document.getElementById('point1_waring_box').setAttribute('style', 'background-color: red !important');
                     document.getElementById('point1_waring').innerHTML = "Nguy Hiểm";
                     if(k == 0) {
-                        alert("Điểm đo Trường Chinh nước cao");
-                        k = 1;
+                        let  warning = new Audio('./assets/mp3/warning.mp3');
+                        warning.play();
+                      //  alert("Điểm đo Đại học Thủy Lợi nước cao");
+                        k = 1;  
                     } 
                 }
                 else {
